@@ -21,6 +21,8 @@ const StocksContainer = () => {
     }, [stockData])
 
     const getData = () => {
+        console.log(selectedStockSymbol);
+        console.log(selectedStockUrl);
         fetch(selectedStockUrl)
         .then(result => result.json())
         .then(data => setStockData(data));

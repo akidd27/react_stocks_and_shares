@@ -9,11 +9,13 @@ const StockSelector = ({ onStockSelected }) => {
 
     const handleChange = ((event) => {
         const userInput = event.target.value;
-        if (typeof(userInput) == String){
-            setKeywords(userInput);
+
+        console.log(isNaN(parseInt(userInput, 10)));
+        if(!isNaN(parseInt(userInput, 10))){
+            onStockSelected(searchResults[userInput]['1. symbol']);
         }
         else{
-            onStockSelected(stockSuggestions[userInput]['1. symbol']);
+            setKeywords(userInput);
         }
     })
 
